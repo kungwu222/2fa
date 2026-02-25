@@ -207,6 +207,12 @@ export const addSecretSchema = new Schema({
 			return (num >= 0 && Number.isInteger(num)) || 'HOTP计数器必须是非负整数';
 		},
 	},
+	category: {
+		required: false,
+		type: 'string',
+		default: '',
+		transform: (v) => (v ? v.trim() : ''),
+	},
 });
 
 /**
